@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setBooks } from '../../redux/actions/booksActions';
 import './Header.scss';
 
 const Header: React.FC = () => {
@@ -6,12 +8,18 @@ const Header: React.FC = () => {
   const [orderBy, setOrderBy] = useState<string>('relevance');
   const [category, setCategory] = useState<string>('all');
 
+  useSelector((state) => {
+    return state;
+  });
+  const dispatch = useDispatch();
+
   const getBooks = async () => {
+    console.log(`https://www.googleapis.com/books/v1/volumes?q=${searchValue}:${category === 'all' ? '' : category}&maxResults=30&orderBy=${orderBy}`);
     const response = await fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${searchValue}:${category === 'all' ? '' : category}&maxResults=30&orderBy=${orderBy}`,
     );
     const data = await response.json();
-    console.log(data);
+    dispatch(setBooks(data));
   };
 
   const submitHandler = async (event: any) => {

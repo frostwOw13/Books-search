@@ -1,9 +1,11 @@
 import React from 'react';
+import BookComponent from '../BookComponent/BookComponent';
+import './BookListing.scss';
 
 const BookListing = () => {
   return (
-    <div>
-      <h1>BookListing</h1>
+    <div className="book-list">
+      <BookComponent />
     </div>
   );
 };

@@ -8,6 +8,9 @@
   "rules": {
     "@typescript-eslint/object-curly-spacing" : "off",
     "@typescript-eslint/space-infix-ops": "off",
-    "arrow-body-style": ["error", "always"]
+    "arrow-body-style": ["error", "always"],
+    "@typescript-eslint/no-unused-vars": 1,
+    "@typescript-eslint/semi": 1,
+    "no-trailing-spaces": 1
   }
 }
