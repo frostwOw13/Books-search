@@ -1,3 +1,11 @@
+.book-list__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
 .book-list {
   display: flex;
   flex-direction: row;

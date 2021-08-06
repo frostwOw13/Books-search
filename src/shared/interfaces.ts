@@ -1,6 +1,8 @@
-interface BooksBody {
+export interface BooksBody {
   type: string,
   payload: string
 }
 
-export default BooksBody;
+export interface HeaderProps {
+  currentPage: number
+}

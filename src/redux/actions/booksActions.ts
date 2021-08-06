@@ -19,3 +19,10 @@ export const removeSelectedBooks = () => {
     type: ActionTypes.REMOVE_SELECTED_BOOK,
   };
 };
+
+export const countCurrentPage = (page: number) => {
+  return {
+    type: ActionTypes.COUNT_CURRENT_PAGE,
+    payload: page,
+  };
+};
