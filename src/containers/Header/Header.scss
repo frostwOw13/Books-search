@@ -1,0 +1,32 @@
+.header {
+  max-width: 1920px;
+  height: 200px;
+  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(../../assets/header-bgimg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-size: 44px;
+  margin-bottom: 10px;
+  flex-basis: 100%;
+}
+
+.search-bar {
+  
+}
+
+.header__options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100%;
+}

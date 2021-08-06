@@ -1,16 +1,23 @@
 import './App.scss';
-import { Provider } from 'react-redux';
 import React from 'react';
-import store from './redux/store';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Header from './containers/Header/Header';
+import BookListing from './containers/BookListing/BookListing';
+import BookDetail from './containers/BookDetail/BookDetail';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <h1>Hello</h1>
-      </div>
-    </Provider>
+    <div className="App">
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={BookListing} />
+          <Route path="/book/:bookId" component={BookDetail} />
+          <Route>404 Not Found!</Route>
+        </Switch>
+      </Router>
+    </div>
   );
-}
+};
 
 export default App;

@@ -8,7 +8,7 @@ const intialState = {
 export const booksReducer = (state = intialState, { type, payload }: BooksBody) => {
   switch (type) {
     case ActionTypes.SET_BOOKS:
-      return { ...state, BOOKs: payload };
+      return { ...state, books: payload };
     default:
       return state;
   }
