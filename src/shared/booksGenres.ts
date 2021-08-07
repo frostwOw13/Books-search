@@ -1,4 +1,5 @@
 const genres = [
+  'All',
   'Art',
   'Biography',
   'Business',
