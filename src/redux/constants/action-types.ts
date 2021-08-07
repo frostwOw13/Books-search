@@ -1,9 +1,0 @@
-const ActionTypes = {
-  SET_BOOKS: 'SET_BOOKS',
-  SET_SEARCH_VALUE: 'SET_SEARCH_VALUE',
-  SET_CATEGORY: 'SET_CATEGORY',
-  SET_START_INDEX: 'SET_START_INDEX',
-  SET_ORDER_BY: 'SET_ORDER_BY',
-};
-
-export default ActionTypes;
