@@ -1,10 +1,18 @@
 import { combineReducers } from 'redux';
-import { booksReducer, selectedBooksReducer, countCurrentPage } from './booksReducer';
+import {
+  booksReducer,
+  setSearchValue,
+  setCategory,
+  setStartIndex,
+  setOrderBy,
+} from './booksReducer';
 
 const reducers = combineReducers({
   allBooks: booksReducer,
-  book: selectedBooksReducer,
-  currentPage: countCurrentPage,
+  searchValue: setSearchValue,
+  category: setCategory,
+  startIndex: setStartIndex,
+  orderBy: setOrderBy,
 });
 
 export default reducers;

@@ -7,22 +7,30 @@ export const setBooks = (books: any) => {
   };
 };
 
-export const selectedBooks = (books: any) => {
+export const setSearchValue = (searchValue: string) => {
   return {
-    type: ActionTypes.SELECTED_BOOK,
-    payload: books,
+    type: ActionTypes.SET_SEARCH_VALUE,
+    payload: searchValue,
   };
 };
 
-export const removeSelectedBooks = () => {
+export const setCategory = (category: string) => {
   return {
-    type: ActionTypes.REMOVE_SELECTED_BOOK,
+    type: ActionTypes.SET_CATEGORY,
+    payload: category,
   };
 };
 
-export const countCurrentPage = (page: number) => {
+export const setStartIndex = (startIndex: string) => {
   return {
-    type: ActionTypes.COUNT_CURRENT_PAGE,
-    payload: page,
+    type: ActionTypes.SET_START_INDEX,
+    payload: startIndex,
+  };
+};
+
+export const setOrderBy = (orderBy: string) => {
+  return {
+    type: ActionTypes.SET_ORDER_BY,
+    payload: orderBy,
   };
 };

@@ -3,43 +3,52 @@
   flex-direction: row;
 }
 
-.book__image-wrapper {
-  padding: 5% 10%;
-  background-color: rgb(231, 231, 231);
-  text-align: center;
-
-  .book__image {
-    width: 300px;
-    height: 100%;
-    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+.book__container {
+  display: flex;
+  flex-direction: row;
+  
+  .book__image-wrapper {
+    padding: 5% 10%;
+    background-color: rgb(231, 231, 231);
+    text-align: center;
+  
+    .book__image {
+      width: 300px;
+      height: 100%;
+      box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+    }
+  }
+  
+  .book__description {
+    margin-left: 50px;
+    margin-top: 85px;
+    color: rgb(158, 158, 158);
+    
+    .book__category {
+      font-size: 20px;
+    }
+    
+    .book__title {
+      font-size: 32px;
+      font-weight: bold;
+      color: black;
+    }
+  
+    .book__author {
+      text-decoration: underline;
+    }
+  
+    .book__spec {
+      color: black;
+      border: 1px solid rgb(201, 201, 201);
+      padding: 15px;
+      margin-right: 50px;
+      font-size: 18px;
+      font-weight: 500;
+    }
   }
 }
 
-.book__description {
-  margin-left: 50px;
-  margin-top: 85px;
-  color: rgb(158, 158, 158);
-  
-  .book__category {
-    font-size: 20px;
-  }
-  
-  .book__title {
-    font-size: 32px;
-    font-weight: bold;
-    color: black;
-  }
-
-  .book__author {
-    text-decoration: underline;
-  }
-
-  .book__spec {
-    color: black;
-    border: 1px solid rgb(201, 201, 201);
-    padding: 15px;
-    margin-right: 50px;
-    font-size: 18px;
-    font-weight: 500;
-  }
+.error {
+  margin: 50px auto;
 }
