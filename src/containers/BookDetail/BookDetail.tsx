@@ -1,10 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { RouteParams } from '../../shared/interfaces';
 import './BookDetail.scss';
 
 const BookDetail = () => {
-  const { bookId }: any = useParams();
+  const { bookId } = useParams<RouteParams>();
   const currentBook = useSelector((state: any) => {
     if (state.allBooks.books?.items) return state.allBooks.books.items[bookId];
     return undefined;

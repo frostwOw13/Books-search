@@ -13,6 +13,7 @@
     "@typescript-eslint/semi": 1,
     "no-trailing-spaces": 1,
     "react/button-has-type": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "react/jsx-one-expression-per-line": "off"
   }
 }

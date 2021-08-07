@@ -1,11 +1,18 @@
-import { BooksReducerBody, RequestReducer } from '../../shared/interfaces';
+import {
+  BooksReducerBody,
+  BooksState,
+  RequestReducer,
+} from '../../shared/interfaces';
 import ActionTypes from '../constants/action-types';
 
 const initialState = {
   books: [],
 };
 
-export const booksReducer = (state = initialState, { type, payload }: BooksReducerBody) => {
+export const booksReducer = (
+  state: BooksState = initialState,
+  { type, payload }: BooksReducerBody,
+) => {
   switch (type) {
     case ActionTypes.SET_BOOKS:
       return { ...state, books: payload };
@@ -14,7 +21,10 @@ export const booksReducer = (state = initialState, { type, payload }: BooksReduc
   }
 };
 
-export const setSearchValue = (state = '', { type, payload }: RequestReducer) => {
+export const setSearchValue = (
+  state: string = '',
+  { type, payload }: RequestReducer,
+) => {
   switch (type) {
     case ActionTypes.SET_SEARCH_VALUE:
       return payload;
@@ -23,7 +33,10 @@ export const setSearchValue = (state = '', { type, payload }: RequestReducer) =>
   }
 };
 
-export const setCategory = (state = 'all', { type, payload }: RequestReducer) => {
+export const setCategory = (
+  state: string = 'all',
+  { type, payload }: RequestReducer,
+) => {
   switch (type) {
     case ActionTypes.SET_CATEGORY:
       return payload;
@@ -32,7 +45,10 @@ export const setCategory = (state = 'all', { type, payload }: RequestReducer) =>
   }
 };
 
-export const setStartIndex = (state = '0', { type, payload }: RequestReducer) => {
+export const setStartIndex = (
+  state: string = '0',
+  { type, payload }: RequestReducer,
+) => {
   switch (type) {
     case ActionTypes.SET_START_INDEX:
       return payload;
@@ -41,7 +57,10 @@ export const setStartIndex = (state = '0', { type, payload }: RequestReducer) =>
   }
 };
 
-export const setOrderBy = (state = 'relevance', { type, payload }: RequestReducer) => {
+export const setOrderBy = (
+  state: string = 'relevance',
+  { type, payload }: RequestReducer,
+) => {
   switch (type) {
     case ActionTypes.SET_ORDER_BY:
       return payload;

@@ -14,3 +14,15 @@
   justify-content: center;
   margin: 0 auto;
 }
+
+.book-list__btn {
+  width: 360px;
+  margin: 0 auto;
+}
+
+@media (max-width: 380px) {
+  .book-list__btn {
+    width: 350px;
+    margin-left: 15px;
+  }
+}

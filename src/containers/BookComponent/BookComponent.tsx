@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { MAX_SYMBOLS } from '../../shared/constants';
 import './BookComponent.scss';
 
 const BookComponent: React.FC = () => {
@@ -9,7 +10,7 @@ const BookComponent: React.FC = () => {
   });
 
   const spliceTitleText = (title: string) => {
-    if (title?.length > 70) return `${title.split('').splice(0, 70).join('')}...`;
+    if (title?.length > MAX_SYMBOLS) return `${title.split('').splice(0, MAX_SYMBOLS).join('')}...`;
     return title;
   };
 

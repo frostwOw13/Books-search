@@ -18,3 +18,11 @@ export interface Request {
   startIndex: string,
   orderBy: string
 }
+
+export interface BooksState {
+  books: string[]
+}
+
+export interface RouteParams {
+  bookId: string
+}

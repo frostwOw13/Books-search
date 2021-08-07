@@ -7,6 +7,7 @@ import {
   setOrderBy,
   setSearchValue,
 } from '../../redux/actions/booksActions';
+import genres from '../../shared/booksGenres';
 import { Request } from '../../shared/interfaces';
 import './Header.scss';
 
@@ -21,7 +22,7 @@ const Header: React.FC = () => {
     category,
     startIndex,
     orderBy,
-  } = useSelector((state: any) => {
+  } = useSelector<Request, Request>((state) => {
     const request: Request = {
       searchValue: '',
       category: 'all',
@@ -62,21 +63,17 @@ const Header: React.FC = () => {
   const sortHandler = (event: React.ChangeEvent) => {
     const element = event.currentTarget as HTMLInputElement;
     dispatch(setOrderBy(element.value));
-    getBooks();
-    history.push('/');
   };
 
   const categoryHandler = (event: React.ChangeEvent) => {
     const element = event.currentTarget as HTMLInputElement;
     dispatch(setCategory(element.value));
-    getBooks();
-    history.push('/');
   };
 
   return (
     <header className="header">
       <h1 className="title">Search for books</h1>
-      <form className="form" onSubmit={submitHandler} action="/">
+      <form className="form" onSubmit={submitHandler}>
         <div className="form__search">
           <input
             type="text"
@@ -94,10 +91,9 @@ const Header: React.FC = () => {
           <label htmlFor="category">
             Categories
             <select id="category" className="select" onChange={categoryHandler}>
-              <option>all</option>
-              <option>fiction</option>
-              <option>fantasy</option>
-              <option>computer</option>
+              {genres.map((genre: string) => {
+                return (<option>{genre}</option>);
+              })}
             </select>
           </label>
           <label htmlFor="sortby">

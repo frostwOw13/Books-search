@@ -13,7 +13,6 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/" exact component={BookListing} />
           <Route path="/book/:bookId" component={BookDetail} />
-          <Route>404 Not Found!</Route>
         </Switch>
       </Router>
     </div>

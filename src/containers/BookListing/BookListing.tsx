@@ -4,20 +4,16 @@ import { setBooks, setStartIndex } from '../../redux/actions/booksActions';
 import BookComponent from '../BookComponent/BookComponent';
 import { Request } from '../../shared/interfaces';
 import './BookListing.scss';
+import { NUMBER_OF_MAX_COMPONENTS_ON_PAGE } from '../../shared/constants';
 
 const BookListing = () => {
-  const [countIndex, setCountIndex] = useState<number>(30);
-  const totalItems = useSelector((state: any) => {
+  const [countIndex, setCountIndex] = useState<number>(NUMBER_OF_MAX_COMPONENTS_ON_PAGE);
+  const totalItems = useSelector<any, string>((state) => {
     return state.allBooks.books.totalItems;
   });
   const dispatch = useDispatch();
 
-  const {
-    searchValue,
-    category,
-    startIndex,
-    orderBy,
-  } = useSelector((state: any) => {
+  const response = useSelector<Request, Request>((state) => {
     const request: Request = {
       searchValue: '',
       category: 'all',
@@ -32,19 +28,26 @@ const BookListing = () => {
     return request;
   });
 
+  const {
+    searchValue,
+    category,
+    startIndex,
+    orderBy,
+  } = response;
+
   const getBooks = async () => {
-    const response = await fetch(
+    const responseAPI = await fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${searchValue}:${category === 'all' ? '' : category}&startIndex=${startIndex}&maxResults=30&orderBy=${orderBy}`,
     ).catch((err) => {
       throw new Error(err);
     });
-    const data = await response.json();
+    const data = await responseAPI.json();
     dispatch(setBooks(data));
   };
 
   const countHandler = () => {
     setCountIndex((prevCount) => {
-      return prevCount + 30;
+      return prevCount + NUMBER_OF_MAX_COMPONENTS_ON_PAGE;
     });
     dispatch(setStartIndex(String(countIndex)));
     getBooks();
