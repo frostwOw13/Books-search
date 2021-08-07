@@ -62,11 +62,15 @@ const Header: React.FC = () => {
   const sortHandler = (event: React.ChangeEvent) => {
     const element = event.currentTarget as HTMLInputElement;
     dispatch(setOrderBy(element.value));
+    getBooks();
+    history.push('/');
   };
 
   const categoryHandler = (event: React.ChangeEvent) => {
     const element = event.currentTarget as HTMLInputElement;
     dispatch(setCategory(element.value));
+    getBooks();
+    history.push('/');
   };
 
   return (
@@ -87,16 +91,22 @@ const Header: React.FC = () => {
         </div>
 
         <div className="form__options">
-          <select className="category" onChange={categoryHandler}>
-            <option>all</option>
-            <option>fiction</option>
-            <option>fantasy</option>
-            <option>computer</option>
-          </select>
-          <select className="sortby" onChange={sortHandler}>
-            <option>relevance</option>
-            <option>newest</option>
-          </select>
+          <label htmlFor="category">
+            Categories
+            <select id="category" className="select" onChange={categoryHandler}>
+              <option>all</option>
+              <option>fiction</option>
+              <option>fantasy</option>
+              <option>computer</option>
+            </select>
+          </label>
+          <label htmlFor="sortby">
+            Sorting by
+            <select id="sortby" className="select" onChange={sortHandler}>
+              <option>relevance</option>
+              <option>newest</option>
+            </select>
+          </label>
         </div>
       </form>
     </header>
